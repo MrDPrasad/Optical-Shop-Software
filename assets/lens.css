@@ -1,33 +1,8 @@
 
-
-
-
- /*navigation bar*/
-
 *{
     margin: 0%;
     padding: 0%;
 }
-
-
-
-
-
-
-
-
-/*body {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}*/
-
-
-
 
 .menu-bar
 {
@@ -45,6 +20,11 @@
     float: left;
     margin-left: 150px;
  }
+
+
+
+
+
 
 
 
@@ -99,40 +79,139 @@
 }
 
 
-/*navigation bar end*/
 
 
 
-.image-container {
-    margin-top: 0px;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    quotes :none;
-
-}
-
-.text h1{
+.menu2 ul{
+    margin-top: 30px;
+    float: left;
     
-     margin-bottom: 20px;
+    
 }
 
-.text {
+.menu2 ul li{
+    display: inline-block;
+    list-style: none;
     
-    font-size: large;
+}
+
+.menu2 ul li a{
+    text-decoration: none;
+    color: #050404;
+    padding: 0px 7px;
+}
+
+
+.menu2 ul li a:hover{
+    text-decoration: underline;
+    color: rgb(0, 77, 144);
+}
+
+ 
+
+
+
+ 
+
+ 
+
+.lens{
+
+ 
+
+    margin-top: 10px;
+    
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color:white;
+    padding: 11spx;
+}
+
+.lens img{
+    width: 18%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.main img{
+    width: 100%;
+}
+
+.lens img:hover{
+    background-color: white;
+    transform: translateY(-10px);
+}
+
+
+
+
+
+
+.main img{
+    width: 500px;
+    height: 500px;
+    
+    float: right;
+    margin-right: 100px;     
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner h2{
+    margin-top: 100px;
     text-align: center;
-    margin: 40px;
-   
+    padding: 22px;
+}
+
+.banner .img img{
+    margin-top: 50px;
+    width: 100%;
 }
 
 
-/*footer */
+
+ /*
+
+.footer{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: rgba(173, 176, 173, 0.647);
+    color: black;
+    padding: 43px;
+}
+
+.footer .list ul{
+    list-style: none;
+}
+
+*/
+
+
 
 .footer{
     
-    background-color:  rgb(1, 9, 59);
+    background-color: rgba(173, 176, 173, 0.647);
      
    /* background-position: center;
     background-attachment: fixed;*/
@@ -150,7 +229,7 @@
 }
 
 .footer .box-container .box h2{
-    color: white;
+    color: black;
     font-size: 1.5rem;
     padding-bottom: 1rem;
     margin-top: 40px;
@@ -159,7 +238,7 @@
 
 .footer .box-container .box a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1rem;
     padding-bottom: 1rem;
     display: block;
@@ -178,24 +257,15 @@
 }
 
 .footer .credit{
-    
     text-align: center;
     padding-top: 1rem;
     margin-top: 1rem;
     border-top: .1rem solid black;
-    background-color: rgb(1, 9, 59);;
-    font-size: 1.2rem;
-    color: white;
+    font-size: 1rem;
+    color: black;
      
 }
 
 .footer .credit span{
     color: red;
 }
-
-
-
-
-
-
-/*footer end*/
