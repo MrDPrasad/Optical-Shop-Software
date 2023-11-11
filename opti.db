@@ -1,0 +1,97 @@
+-- Create Category Table
+CREATE TABLE Category (
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(255) NOT NULL
+);
+
+-- Create Supplier Table
+CREATE TABLE Supplier (
+    SupplierID INT PRIMARY KEY,
+    SupplierName VARCHAR(255) NOT NULL,
+    ContactName VARCHAR(255),
+    ContactEmail VARCHAR(255),
+    ContactPhone VARCHAR(20),
+    UNIQUE (ContactEmail)
+);
+
+-- Create Items Table
+CREATE TABLE Items (
+    ItemID INT PRIMARY KEY,
+    ItemName VARCHAR(255) NOT NULL,
+    CategoryID INT,
+    Description TEXT,
+    Price DECIMAL(10, 2) NOT NULL,
+    Quantity INT NOT NULL,
+    SupplierID INT,
+    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
+    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
+);
+
+-- Create Customers Table
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    ContactEmail VARCHAR(255) NOT NULL,
+    ContactPhone VARCHAR(20),
+    Status VARCHAR(20),
+    DOB DATE,
+    PurchaseHistory TEXT
+);
+
+-- Create Stock Table
+CREATE TABLE Stock (
+    StockID INT PRIMARY KEY,
+    ItemID INT,
+    Quantity INT NOT NULL,
+    ReorderLevel INT NOT NULL,
+    FOREIGN KEY (ItemID) REFERENCES Items(ItemID),
+    CHECK (Quantity >= 0)
+);
+
+-- Create Orders Table
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATETIME NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    OrderStatus VARCHAR(20) DEFAULT 'Pending',
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+-- Create OrderDetails Table
+CREATE TABLE OrderDetails (
+    OrderDetailID INT PRIMARY KEY,
+    OrderID INT,
+    ItemID INT,
+    Quantity INT NOT NULL,
+    Subtotal DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ItemID) REFERENCES Items(ItemID)
+);
+
+-- Create Invoice Table
+CREATE TABLE Invoice (
+    InvoiceID INT PRIMARY KEY,
+    OrderID INT,
+    InvoiceDate DATETIME NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
+-- Create Reports Table
+CREATE TABLE Reports (
+    ReportID INT PRIMARY KEY,
+    ReportName VARCHAR(255) NOT NULL,
+    ReportType VARCHAR(255) NOT NULL,
+    ReportDate DATE NOT NULL,
+    ReportContent TEXT NOT NULL
+);
+
+-- Create Web Table
+CREATE TABLE Web (
+    WebID INT PRIMARY KEY,
+    WebPageContent TEXT NOT NULL,
+    WebPageName VARCHAR(255) NOT NULL,
+    WebPageURL VARCHAR(255) NOT NULL
+);
