@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="lens.css">
+    <link rel="stylesheet" href="assets/lens.css">
     <script src="https://kit.fontawesome.com/7d286ea9a7.js" crossorigin="anonymous"></script>
     
 </head>
@@ -18,8 +18,24 @@
          
     
         <ul>
-             
-            <li><a href="#">Sign In & Sign Up</a> </li>
+
+        <?php
+        if (isset($_SESSION["user"])) {
+            ?>
+            <li class="menu-bar2">
+                <?= $_SESSION['user']['name']; ?>
+                <li><a href="logout.php">Logout</a></li>
+            </li>
+            <?php
+        }
+        else {
+            ?>
+            <li><a href="loginpage.php">Sign In & Sign Up</a></li>
+            <?php
+        }
+        ?>
+            
+            
             <li><a href="#">About</a></li>
             <li><a href="#">Products</a></li>
            <li><a href="#">Contact us</a></li>  
@@ -47,11 +63,11 @@
 
     <div class="lens">
 
-        <img src="asset/computerglass.jpg" alt="">
-        <img src="asset/123.jpg" alt="">
-        <img src="asset/kidsglass.jpg" alt="">
-        <img src="asset/power sunglass.jpg" alt="">
-         <img src="asset/eye.jpg" alt="">
+        <img src="assets/computerglass.jpg" alt="">
+        <img src="assets/123.jpg" alt="">
+        <img src="assets/kidsglass.jpg" alt="">
+        <img src="assets/power sunglass.jpg" alt="">
+         <img src="assets/eye.jpg" alt="">
 
     </div>
 
@@ -75,7 +91,7 @@
     <div class="banner">
       
         <div class="img">
-            <img src="asset/dp2.webp" alt="">
+            <img src="assets/dp2.webp" alt="">
         </div>
     </div>
 
@@ -96,7 +112,7 @@
     <div class="banner">
         <h2>PREMIUM EYEWEAR</h2>
         <div class="img">
-            <img src="asset/dp.webp" alt="">
+            <img src="assets/dp.webp" alt="">
         </div>
     </div>
  
