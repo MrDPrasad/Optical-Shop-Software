@@ -1,9 +1,10 @@
 
+    <?php 
     <!DOCTYPE html>
       <html lang="en">
       <head>
         <meta charset="UTF-8" />
-        <title>Dashboard | By Code Info</title>
+        <title>Dashboard </title>
         <link rel="stylesheet" href="assets/dashboard.css" />
         <script src="https://kit.fontawesome.com/e3674a2474.js" crossorigin="anonymous"></script>
         <!-- Font Awesome Cdn Link -->
@@ -120,3 +121,4 @@
           </div>
       </body>
       </html>
+      ?>
