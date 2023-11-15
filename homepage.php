@@ -1,3 +1,14 @@
+
+<?php
+
+session_start();
+include('../Optical-Shop-Software/config/DB_conn.php');
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +21,11 @@
     
 </head>
 <body>
+
+
+
+
+
     <div class="menu-bar">
         <p><i class="fa-solid fa-phone-volume"></i>&nbsp;999-666-222</p>
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -20,21 +36,27 @@
         <ul>
 
         <?php
-        if (isset($_SESSION["user"])) {
+        if (isset($_SESSION["auth"])) {
             ?>
             <li class="menu-bar2">
-                <?= $_SESSION['user']['name']; ?>
+
+            <li class="log">
+                <i class="fa-solid fa-user"></i> 
+              
+               
                 <li><a href="logout.php">Logout</a></li>
+            </li>
             </li>
             <?php
         }
         else {
             ?>
-            <li><a href="loginpage.php">Sign In & Sign Up</a></li>
+            <li><a href="registration.php">Register</a></li>
+            <li><a href="loginpage.php">Login</a></li>
             <?php
         }
         ?>
-            
+             
             
             <li><a href="#">About</a></li>
             <li><a href="#">Products</a></li>
