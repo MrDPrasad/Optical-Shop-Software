@@ -23,18 +23,28 @@
                 <i class="fas fa-home"></i>
                 <span class="nav-item">Home</span>
               </a></li>
+
+
               <li><a href="">
                   <i class="fas fa-user"></i>
                   <span class="nav-item">Category</span>
                 </a></li> 
+
+
                  <li><a href="">
                   <i class="fas fa-user"></i>
                   <span class="nav-item">Items</span>
                 </a></li>
-              <li><a href="">
+
+
+             <li><a href="">
                 <i class="fa-solid fa-boxes-packing"></i>
                 <span class="nav-item">Supplier</span>
               </a></li>
+
+ 
+
+
               <li><a href="">
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Customer</span>
@@ -61,7 +71,7 @@
               </a></li>
             </ul>
           </nav>
-          <div class="box">
+         <div class="box">
             <a class="button" href="#divOne">Contact US</a>
           </div>
           <div class="overlay" id="divOne">
@@ -121,4 +131,4 @@
           </div>
       </body>
       </html>
-      ?>
+      
