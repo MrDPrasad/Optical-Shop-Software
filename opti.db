@@ -1,12 +1,16 @@
+-- Create Database
+CREATE DATABASE IF NOT EXISTS opti.db;
+USE opti.db;
+
 -- Create Category Table
-CREATE TABLE Category (
-    CategoryID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Category (
+    CategoryID INT AUTO_INCREMENT PRIMARY KEY,
     CategoryName VARCHAR(255) NOT NULL
 );
 
 -- Create Supplier Table
-CREATE TABLE Supplier (
-    SupplierID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Supplier (
+    SupplierID INT AUTO_INCREMENT PRIMARY KEY,
     SupplierName VARCHAR(255) NOT NULL,
     ContactName VARCHAR(255),
     ContactEmail VARCHAR(255),
@@ -15,8 +19,8 @@ CREATE TABLE Supplier (
 );
 
 -- Create Items Table
-CREATE TABLE Items (
-    ItemID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Items (
+    ItemID INT AUTO_INCREMENT PRIMARY KEY,
     ItemName VARCHAR(255) NOT NULL,
     CategoryID INT,
     Description TEXT,
@@ -28,8 +32,8 @@ CREATE TABLE Items (
 );
 
 -- Create Customers Table
-CREATE TABLE Customers (
-    CustomerID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Customers (
+    CustomerID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
     ContactEmail VARCHAR(255) NOT NULL,
@@ -40,8 +44,8 @@ CREATE TABLE Customers (
 );
 
 -- Create Stock Table
-CREATE TABLE Stock (
-    StockID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Stock (
+    StockID INT AUTO_INCREMENT PRIMARY KEY,
     ItemID INT,
     Quantity INT NOT NULL,
     ReorderLevel INT NOT NULL,
@@ -50,8 +54,8 @@ CREATE TABLE Stock (
 );
 
 -- Create Orders Table
-CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Orders (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
     CustomerID INT,
     OrderDate DATETIME NOT NULL,
     TotalAmount DECIMAL(10, 2) NOT NULL,
@@ -60,8 +64,8 @@ CREATE TABLE Orders (
 );
 
 -- Create OrderDetails Table
-CREATE TABLE OrderDetails (
-    OrderDetailID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS OrderDetails (
+    OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,
     OrderID INT,
     ItemID INT,
     Quantity INT NOT NULL,
@@ -71,8 +75,8 @@ CREATE TABLE OrderDetails (
 );
 
 -- Create Invoice Table
-CREATE TABLE Invoice (
-    InvoiceID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Invoice (
+    InvoiceID INT AUTO_INCREMENT PRIMARY KEY,
     OrderID INT,
     InvoiceDate DATETIME NOT NULL,
     TotalAmount DECIMAL(10, 2) NOT NULL,
@@ -80,8 +84,8 @@ CREATE TABLE Invoice (
 );
 
 -- Create Reports Table
-CREATE TABLE Reports (
-    ReportID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Reports (
+    ReportID INT AUTO_INCREMENT PRIMARY KEY,
     ReportName VARCHAR(255) NOT NULL,
     ReportType VARCHAR(255) NOT NULL,
     ReportDate DATE NOT NULL,
@@ -89,8 +93,8 @@ CREATE TABLE Reports (
 );
 
 -- Create Web Table
-CREATE TABLE Web (
-    WebID INT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Web (
+    WebID INT AUTO_INCREMENT PRIMARY KEY,
     WebPageContent TEXT NOT NULL,
     WebPageName VARCHAR(255) NOT NULL,
     WebPageURL VARCHAR(255) NOT NULL
