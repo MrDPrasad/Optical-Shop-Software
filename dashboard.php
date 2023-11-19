@@ -1,13 +1,14 @@
 <?php
 session_start();
-include('DB_conn.php');
+include('../Optical-Shop-Software/config/DB_conn.php');
+include('adminauthe.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="assets/dashboard.css" />
     <script src="https://kit.fontawesome.com/e3674a2474.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script>

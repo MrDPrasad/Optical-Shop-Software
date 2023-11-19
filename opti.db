@@ -1,14 +1,11 @@
--- Create Database
-CREATE DATABASE IF NOT EXISTS opti.db;
-USE opti.db;
+CREATE DATABASE IF NOT EXISTS opti;
+USE opti;
 
--- Create Category Table
 CREATE TABLE IF NOT EXISTS Category (
     CategoryID INT AUTO_INCREMENT PRIMARY KEY,
     CategoryName VARCHAR(255) NOT NULL
 );
 
--- Create Supplier Table
 CREATE TABLE IF NOT EXISTS Supplier (
     SupplierID INT AUTO_INCREMENT PRIMARY KEY,
     SupplierName VARCHAR(255) NOT NULL,
@@ -18,7 +15,6 @@ CREATE TABLE IF NOT EXISTS Supplier (
     UNIQUE (ContactEmail)
 );
 
--- Create Items Table
 CREATE TABLE IF NOT EXISTS Items (
     ItemID INT AUTO_INCREMENT PRIMARY KEY,
     ItemName VARCHAR(255) NOT NULL,
@@ -31,9 +27,8 @@ CREATE TABLE IF NOT EXISTS Items (
     FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
 );
 
--- Create Customers Table
 CREATE TABLE IF NOT EXISTS Customers (
-    CustomerID INT AUTO_INCREMENT PRIMARY KEY,
+    CustomerID VARCHAR(20) PRIMARY KEY,
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
     ContactEmail VARCHAR(255) NOT NULL,
@@ -43,7 +38,6 @@ CREATE TABLE IF NOT EXISTS Customers (
     PurchaseHistory TEXT
 );
 
--- Create Stock Table
 CREATE TABLE IF NOT EXISTS Stock (
     StockID INT AUTO_INCREMENT PRIMARY KEY,
     ItemID INT,
@@ -53,17 +47,15 @@ CREATE TABLE IF NOT EXISTS Stock (
     CHECK (Quantity >= 0)
 );
 
--- Create Orders Table
 CREATE TABLE IF NOT EXISTS Orders (
     OrderID INT AUTO_INCREMENT PRIMARY KEY,
-    CustomerID INT,
+    CustomerID VARCHAR(20),
     OrderDate DATETIME NOT NULL,
     TotalAmount DECIMAL(10, 2) NOT NULL,
     OrderStatus VARCHAR(20) DEFAULT 'Pending',
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 
--- Create OrderDetails Table
 CREATE TABLE IF NOT EXISTS OrderDetails (
     OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,
     OrderID INT,
@@ -74,7 +66,6 @@ CREATE TABLE IF NOT EXISTS OrderDetails (
     FOREIGN KEY (ItemID) REFERENCES Items(ItemID)
 );
 
--- Create Invoice Table
 CREATE TABLE IF NOT EXISTS Invoice (
     InvoiceID INT AUTO_INCREMENT PRIMARY KEY,
     OrderID INT,
@@ -83,7 +74,6 @@ CREATE TABLE IF NOT EXISTS Invoice (
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
 
--- Create Reports Table
 CREATE TABLE IF NOT EXISTS Reports (
     ReportID INT AUTO_INCREMENT PRIMARY KEY,
     ReportName VARCHAR(255) NOT NULL,
@@ -92,7 +82,6 @@ CREATE TABLE IF NOT EXISTS Reports (
     ReportContent TEXT NOT NULL
 );
 
--- Create Web Table
 CREATE TABLE IF NOT EXISTS Web (
     WebID INT AUTO_INCREMENT PRIMARY KEY,
     WebPageContent TEXT NOT NULL,

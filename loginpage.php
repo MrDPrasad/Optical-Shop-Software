@@ -1,4 +1,12 @@
- 
+<?php
+    
+    session_start();
+   /* if (isset($_SESSION['auth'])) {
+        $_SESSION['message'] = "You are already logged In";
+        header('Location: home.php');
+        exit();
+    }*/
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +19,7 @@
 </head>
 <body>
 <div class="container">
-
-    <?php
-    session_start();
-    ?>
+ 
 
     <div class="py-5">
     <div class="container">
