@@ -4,7 +4,7 @@ $hostName = "localhost";
 $username = "root";
 $password = "";
 $database = "opti";
-$con = mysqli_connect($hostName, $username, $password, $database);
+$con = mysqli_connect($hostName, $username, $password, $database,);
 
 
 if (!$con) {
