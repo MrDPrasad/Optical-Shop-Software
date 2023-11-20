@@ -1,6 +1,5 @@
 <?php
 
-
 if (isset($_SESSION['auth'])) 
 {
     if ($_SESSION['role_as'] != 1) 
@@ -14,7 +13,7 @@ if (isset($_SESSION['auth']))
 else 
 {
     $_SESSION['message'] = "login to continue";
-    header('Location: loginpage.php.php');
+    header('Location: loginpage.php');
      
     
 }
