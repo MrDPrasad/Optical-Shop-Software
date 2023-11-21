@@ -41,7 +41,8 @@ include('../Optical-Shop-Software/config/DB_conn.php');
             <li class="menu-bar2">
 
             <li class="log">
-                <i class="fa-solid fa-user"></i> 
+                <i class="fa-solid fa-user"></i>
+                <?= $_SESSION['auth_user']['Firstname']; ?> 
               
                
                 <li><a href="logout.php">Logout</a></li>

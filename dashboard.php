@@ -1,13 +1,14 @@
 <?php
 session_start();
-include('DB_conn.php');
+include('../Optical-Shop-Software/config/DB_conn.php');
+/*include('adminauthe.php');*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="assets/dashboard.css" />
     <script src="https://kit.fontawesome.com/e3674a2474.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script>
@@ -28,18 +29,18 @@ include('DB_conn.php');
                     </a>
                 </li>
                 <li><a href="#"><i class="fas fa-home"></i><span class="nav-item">Home</span></a></li>
-                <li><a href=""><i class="fas fa-user"></i><span class="nav-item">Category</span></a></li>
+                <li><a href="cat.php"><i class="fas fa-user"></i><span class="nav-item">Category</span></a></li>
                 <li><a href=""><i class="fas fa-user"></i><span class="nav-item">Items</span></a></li>
-                <li><a href=""><i class="fa-solid fa-boxes-packing"></i><span class="nav-item">Supplier</span></a></li>
+             <!--   <li><a href=""><i class="fa-solid fa-boxes-packing"></i><span class="nav-item">Supplier</span></a></li>-->
                 <li><a href=""><i class="fas fa-wallet"></i><span class="nav-item">Customer</span></a></li>
                 <li><a href=""><i class="fas fa-chart-bar"></i><span class="nav-item">Stocks</span></a></li>
                 <li><a href=""><i class="fas fa-tasks"></i><span class="nav-item">Order</span></a></li>
-                <li><a href=""><i class="fas fa-cog"></i><span class="nav-item">Invoice</span></a></li>
+                <li><a href="invoice_form.php"><i class="fas fa-cog"></i><span class="nav-item">Invoice</span></a></li>
                 <li><a href=""><i class="fas fa-question-circle"></i><span class="nav-item">Reports</span></a></li>
                 <li><a href="" class="logout"><i class="fas fa-sign-out-alt"></i><span class="nav-item">Web</span></a></li>
             </ul>
         </nav>
-        <div class="box">
+       <div class="box">
             <a class="button" href="#divOne">Contact US</a>
         </div>
         <div class="overlay" id="divOne">

@@ -1,14 +1,8 @@
-
-
-<?php
-/*session_start();
-if (!isset($_SESSION["user"])) {
-    header("Location: loginpage.php");
-}*/
-?>
-
-
-
+ 
+ <?php
+    session_start();
+  
+    ?>
 
 
 
@@ -99,9 +93,7 @@ if (!isset($_SESSION["user"])) {
 */
     ?>
 
-    <?php
-    session_start();
-    ?>
+    
 
     <div class="py-5">
     <div class="container">
