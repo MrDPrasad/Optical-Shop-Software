@@ -1,0 +1,90 @@
+CREATE DATABASE IF NOT EXISTS opti;
+USE opti;
+
+CREATE TABLE IF NOT EXISTS Category (
+    CategoryID INT AUTO_INCREMENT PRIMARY KEY,
+    CategoryName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Supplier (
+    SupplierID INT AUTO_INCREMENT PRIMARY KEY,
+    SupplierName VARCHAR(255) NOT NULL,
+    ContactName VARCHAR(255),
+    ContactEmail VARCHAR(255),
+    ContactPhone VARCHAR(20),
+    UNIQUE (ContactEmail)
+);
+
+CREATE TABLE IF NOT EXISTS Items (
+    ItemID INT AUTO_INCREMENT PRIMARY KEY,
+    ItemName VARCHAR(255) NOT NULL,
+    CategoryID INT,
+    Description TEXT,
+    Price DECIMAL(10, 2) NOT NULL,
+    Quantity INT NOT NULL,
+    SupplierID INT,
+    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
+    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
+);
+
+CREATE TABLE IF NOT EXISTS Customers (
+    CustomerID VARCHAR(20) PRIMARY KEY,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    ContactEmail VARCHAR(255) NOT NULL,
+    ContactPhone VARCHAR(20),
+    Status VARCHAR(20),
+    DOB DATE,
+    PurchaseHistory TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Stock (
+    StockID INT AUTO_INCREMENT PRIMARY KEY,
+    ItemID INT,
+    Quantity INT NOT NULL,
+    ReorderLevel INT NOT NULL,
+    FOREIGN KEY (ItemID) REFERENCES Items(ItemID),
+    CHECK (Quantity >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS Orders (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
+    CustomerID VARCHAR(20),
+    OrderDate DATETIME NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    OrderStatus VARCHAR(20) DEFAULT 'Pending',
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+CREATE TABLE IF NOT EXISTS OrderDetails (
+    OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderID INT,
+    ItemID INT,
+    Quantity INT NOT NULL,
+    Subtotal DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ItemID) REFERENCES Items(ItemID)
+);
+
+CREATE TABLE IF NOT EXISTS Invoice (
+    InvoiceID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderID INT,
+    InvoiceDate DATETIME NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
+CREATE TABLE IF NOT EXISTS Reports (
+    ReportID INT AUTO_INCREMENT PRIMARY KEY,
+    ReportName VARCHAR(255) NOT NULL,
+    ReportType VARCHAR(255) NOT NULL,
+    ReportDate DATE NOT NULL,
+    ReportContent TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Web (
+    WebID INT AUTO_INCREMENT PRIMARY KEY,
+    WebPageContent TEXT NOT NULL,
+    WebPageName VARCHAR(255) NOT NULL,
+    WebPageURL VARCHAR(255) NOT NULL
+);
