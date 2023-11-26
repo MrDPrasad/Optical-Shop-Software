@@ -70,7 +70,13 @@
                              
 
 
-                                 <button type="submit" name="login_btn" class="btn btn-primary">Submit</button>
+                                 <button type="submit" name="login_btn" class="btn btn-primary">Log In</button>
+
+
+                                 <div class="text-left mt-6">
+                                   <a href="registration.php">Don't have an account? Register here</a>
+                                  </div>
+                                  
 
 
                       </form>

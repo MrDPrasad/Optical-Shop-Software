@@ -1,15 +1,15 @@
 <?php
 session_start();
-include('../Optical-Shop-Software/config/DB_conn.php');
+include('config/DB_conn.php');
 
 function generateCustomerID() {
     $prefix = '#CUST'; // Prefix for the customer ID
-    $randomPart = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 6); // Random part of the ID
+    $randomPart = substr(str_shuffle("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 6); // Random part of the ID
     $customerID = $prefix . $randomPart;
 
     // Check if the generated ID already exists in the database
     global $con;
-    $check_id_query = "SELECT CustomerID FROM Customers WHERE CustomerID='$customerID'";
+    $check_id_query = "SELECT CustomerID FROM customers WHERE CustomerID='$customerID'";
     $check_id_query_run = mysqli_query($con, $check_id_query);
 
     if (mysqli_num_rows($check_id_query_run) > 0) {
@@ -22,8 +22,8 @@ function generateCustomerID() {
 }
 
 if (isset($_POST['register_btn'])) {
-    $Firstname = mysqli_real_escape_string($con, $_POST["Firstname"]);
-    $Lastname = mysqli_real_escape_string($con, $_POST["Lastname"]);  
+    $FirstName = mysqli_real_escape_string($con, $_POST["FirstName"]);
+    $LastName = mysqli_real_escape_string($con, $_POST["LastName"]);  
     $ContactPhone = mysqli_real_escape_string($con, $_POST["ContactPhone"]);
     $ContactEmail = mysqli_real_escape_string($con, $_POST["ContactEmail"]);
     $password = mysqli_real_escape_string($con, $_POST["password"]);
@@ -43,7 +43,7 @@ if (isset($_POST['register_btn'])) {
        $customerID = generateCustomerID();
 
          // Insert data with hashed password and generated customer ID
-    $insert_query = "INSERT INTO Customers (CustomerID, FirstName, LastName, ContactEmail, ContactPhone, password) VALUES ('$customerID', '$Firstname', '$Lastname', '$ContactEmail', '$ContactPhone', '$hashed_password')";
+    $insert_query = "INSERT INTO customers (CustomerID, FirstName, LastName, ContactEmail, ContactPhone, password) VALUES ('$customerID', '$FirstName', '$LastName', '$ContactEmail', '$ContactPhone', '$hashed_password')";
     $insert_query_run = mysqli_query($con, $insert_query);
 
     // Check if email is already registered
@@ -57,7 +57,7 @@ if (isset($_POST['register_btn'])) {
     }
 
     // Insert data with hashed password
-    $insert_query = "INSERT INTO customers (FirstName, LastName, ContactEmail, ContactPhone, password) VALUES ('$Firstname', '$Lastname', '$ContactEmail', '$ContactPhone', '$hashed_password')";
+    $insert_query = "INSERT INTO customers (FirstName, LastName, ContactEmail, ContactPhone, password) VALUES ('$FirstName', '$LastName', '$ContactEmail', '$ContactPhone', '$hashed_password')";
     $insert_query_run = mysqli_query($con, $insert_query);
 
     if ($insert_query_run) {
@@ -86,12 +86,14 @@ else if(isset($_POST['login_btn'])) {
         if (password_verify($password, $stored_password)) {
             $_SESSION['auth'] = true;
 
-            $username = $userdata['Firstname'];
+            $username = $userdata['FirstName'];
             $useremail = $userdata['ContactEmail'];
             $role_as = $userdata['role_as'];
 
+           
+            $_SESSION['auth'] = true;
             $_SESSION['auth_user'] = [
-                'Firstname' => $username,
+                'FirstName' => $username,
                 'ContactEmail' => $useremail
             ];
 

@@ -1,5 +1,5 @@
 
-<?php include('header.php'); ?>
+<?php include('../dashboard.php'); ?>
 
 <div class="container">
     <div class="row">
