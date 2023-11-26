@@ -38,6 +38,8 @@
                             <label>Description</label>
                             <textarea name="description" placeholder="Write something.." rows="4"></textarea>
                             <input type="submit" value="Submit">
+                            <input type="submit2" value="Display categories">
+                            
                         </form>
                     </div>
             

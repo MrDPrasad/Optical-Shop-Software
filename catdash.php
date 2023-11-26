@@ -51,17 +51,7 @@
         </nav>
 
         
-       
-<section class="main">
-          <section class="main-course">
-            <div class="course-box">
-            <h1>Hello Ni_dpn</h1>
-            </div>
-
-          </section>
-</section>
-
-
+        <?php include('category.php'); ?>
        
 
          

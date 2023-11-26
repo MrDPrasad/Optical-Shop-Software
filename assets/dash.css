@@ -1,4 +1,4 @@
- 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
  
 *{
   margin: 0;
@@ -76,6 +76,7 @@ a:hover{
   position: relative;
   padding: 20px;
   width: 100%;
+
 }
 .main-top{
   display: flex;
@@ -126,10 +127,11 @@ a:hover{
 
 /* Courses */
 .main-course{
-  margin-top:20px ;
+  margin-top:-10px ;
   text-transform: capitalize;
 }
 .course-box {
+   
   width: 95%;
   min-height: 300px; /* Changed height to min-height */
   padding: 35px;
@@ -293,11 +295,54 @@ input[type=text],select,textarea {
 input[type="submit"] {
   background-color: #066bb4;
   color: #fff;
-  padding: 10px 30px;
+  padding: 11px 32px;
   border: none;
- /* border-radius: 50px;*/
+  /* border-radius: 50px; */
   cursor: pointer;
   font-size: 15px;
-  text-transform: uppercase;
   letter-spacing: 3px;
+  transition: background-color 0.3s, color 0.3s; /* Adding transition for smooth effect */
 }
+
+/* Hover effect */
+input[type="submit"]:hover {
+  background-color: #044e85;
+  color: #fff;
+}
+
+input[type="submit2"] {
+  margin-left: 50px;
+  background-color: #066bb4;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  /* border-radius: 50px; */
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 3px;
+  transition: background-color 0.3s, color 0.3s; /* Adding transition for smooth effect */
+}
+
+/* Hover effect */
+input[type="submit"]:hover {
+  background-color: #044e85;
+  color: #fff;
+}
+
+
+
+
+
+
+
+/*.course-box{
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: .1rem solid black;
+  font-size: 1rem;
+  color: black;
+   
+}*/
+
+ 
