@@ -35,33 +35,25 @@ include('../Optical-Shop-Software/config/DB_conn.php');
     
         <ul>
 
-        <?php
-        if (isset($_SESSION["auth"])) {
-            ?>
-            <li class="menu-bar2">
+        <?php if (isset($_SESSION["auth"])): ?>
+    <li class="menu-bar2">
+        <li class="log">
+            <i class="fa-solid fa-user"></i>
+            <span style="margin-left: 5px;"><?=$_SESSION['auth_user']['FirstName']; ?></span>
+            <li><a href="logout.php">Logout</a></li>
+        </li>
+    </li>
+<?php else: ?>
+    <li><a href="registration.php">Register</a></li>
+    <li><a href="loginpage.php">Login</a></li>
+    <li><a href="#">Contact us</a></li>  
+<?php endif; ?>
 
-            <li class="log">
-                <i class="fa-solid fa-user"></i>
-                <?= $_SESSION['auth_user']['Firstname']; ?> 
-              
-               
-                <li><a href="logout.php">Logout</a></li>
-            </li>
-            </li>
-            <?php
-        }
-        else {
-            ?>
-            <li><a href="registration.php">Register</a></li>
-            <li><a href="loginpage.php">Login</a></li>
-            <?php
-        }
-        ?>
              
             
             <li><a href="#">About</a></li>
             <li><a href="#">Products</a></li>
-           <li><a href="#">Contact us</a></li>  
+             
             <li><a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></i>  Cart</a></li>
              
         </ul>

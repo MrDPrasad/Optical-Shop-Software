@@ -171,7 +171,16 @@
 -->
 
 
-                                 <button type="submit" name="register_btn" class="btn btn-primary">Submit</button>
+
+
+                                 <button type="submit" name="register_btn" class="btn btn-primary">Create Account</button>
+
+                                 <div class="text-left mt-6">
+                                <a href="loginpage.php"> Have an account? Register here</a>
+                                   </div>
+                                 
+                                 
+
 
 
                       </form>
