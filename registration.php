@@ -5,10 +5,6 @@
     ?>
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,9 +111,6 @@
 
             ?>
 
- 
-
-
                 <div class="card">
                        <div class="card-header">
                         <h4>Registration Form</h4>
@@ -169,7 +162,6 @@
                                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
                               </div>
 -->
-
 
 
 

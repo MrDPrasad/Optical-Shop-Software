@@ -1,11 +1,8 @@
 
 <?php
-
 session_start();
 include('../Optical-Shop-Software/config/DB_conn.php');
 ?>
-
-
 
 
 
@@ -60,16 +57,7 @@ include('../Optical-Shop-Software/config/DB_conn.php');
              </div> 
 
 
-             <!--<div class="menu2">
-             <ul>
-             
-                <li><a href="#">EYEGLASSES</a> </li>
-                <li><a href="#">COMPUTER GLASSES</a></li>
-                <li><a href="#">KIDS GLASSES</a></li>
-               <li><a href="#">CONTACT LENSES</a></li>  
-                <li><a href="#">SUNGLASSES</a></li>
-                 
-            </ul>-->
+         ]
         </div>
 
 
