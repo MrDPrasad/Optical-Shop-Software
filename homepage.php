@@ -2,6 +2,7 @@
 <?php
 session_start();
 include('../Optical-Shop-Software/config/DB_conn.php');
+include('../Optical-Shop-Software/assets/dash/header.php');
 ?>
 
 
@@ -18,51 +19,6 @@ include('../Optical-Shop-Software/config/DB_conn.php');
     
 </head>
 <body>
-
-
-
-
-
-    <div class="menu-bar">
-        <p><i class="fa-solid fa-phone-volume"></i>&nbsp;999-666-222</p>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="What are you looking for">
-        
-         
-    
-        <ul>
-
-        <?php if (isset($_SESSION["auth"])): ?>
-    <li class="menu-bar2">
-        <li class="log">
-            <i class="fa-solid fa-user"></i>
-            <span style="margin-left: 5px;"><?=$_SESSION['auth_user']['FirstName']; ?></span>
-            <li><a href="logout.php">Logout</a></li>
-        </li>
-    </li>
-<?php else: ?>
-    <li><a href="registration.php">Register</a></li>
-    <li><a href="loginpage.php">Login</a></li>
-    <li><a href="#">Contact us</a></li>  
-<?php endif; ?>
-
-             
-            
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-             
-            <li><a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></i>  Cart</a></li>
-             
-        </ul>
-             </div> 
-
-
-         ]
-        </div>
-
-
-
-
 
     <div class="lens">
 
@@ -159,54 +115,6 @@ include('../Optical-Shop-Software/config/DB_conn.php');
         </div>
     </div>
 -->
-
-
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-        <h2>Quick link</h2>
-        <a href=""><i class="fa-solid fa-angle-right"></i>home</a>
-        <a href=""><i class="fa-solid fa-angle-right"></i>about</a>
-        <a href=""><i class="fa-solid fa-angle-right"></i>Products</a>
-    </div>
-
-    <div class="box">
-
-        <h2>Extra link</h2>
-        <a href=""><i class="fa-solid fa-angle-right"></i>ask questions</a>
-        <a href=""><i class="fa-solid fa-angle-right"></i>privacy policy</a>
-        <a href=""><i class="fa-solid fa-angle-right"></i> terms of use</a>
-         
-
-    </div>
-
-    <div class="box">
-
-        <h2>Contact information</h2>
-        <a href=""><i class="fa-solid fa-phone"></i>+123-456-7890</a>
-        
-        <a href=""><i class="fa-solid fa-envelope"></i></i>abcd@gmail.com</a>
-        <a href=""><i class="fa-solid fa-location-dot"></i></i>sullia, india - 12345</a>
-         
-
-    </div>
-
-    <div class="box">
-        <h2>Follow us</h2>
-        <a href=""><i class="fa-brands fa-facebook"></i>facebook</a>
-        <a href=""><i class="fa-brands fa-twitter"></i>twitter</a>
-        <a href=""><i class="fa-brands fa-square-instagram"></i>instagram</a>
-    </div>
-
-    </div>
-
-    <div class="credit"> created by <span>mr.Ni_Dpn designer</span> | all rights reserved! </div>
-
- </section>
-
-
-
-
-
-</body>
-    </html>
+<?php
+include('../Optical-Shop-Software/assets/dash/footer.php');
+?>

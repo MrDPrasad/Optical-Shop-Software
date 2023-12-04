@@ -1,15 +1,14 @@
- 
-
-
-<section class="main">
-          <section class="main-course">
-            <h1>Add Category</h1>
-
-            <div class="course-box">
-
-            <div class="container">
+<div class="box">
+            <a class="button" href="#divOne">Contact US</a>
+        </div>
+        <div class="overlay" id="divOne">
+            <div class="wrapper">
+                <h2>Fill up The Products</h2>
+                <a class="close" href="#" onclick="closeOverlay()">&times;</a>
+                <div class="content">
+                    <div class="container">
                         <form method="post" action="process_form.php">
-                            <label>cat Name</label>
+                            <label>Product Name</label>
                             <input placeholder="Fill product name.." type="text" name="product_name">
                             <label>Product Price</label>
                             <input placeholder="Product price" type="text" name="product_price">
@@ -38,14 +37,10 @@
                             <label>Description</label>
                             <textarea name="description" placeholder="Write something.." rows="4"></textarea>
                             <input type="submit" value="Submit">
-                            <input type="submit2" value="Display categories">
-                            
+
                         </form>
                     </div>
-            
+                </div>
             </div>
-
-          </section>
-</section>
-
- 
+        </div>
+    </div>
