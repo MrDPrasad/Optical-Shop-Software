@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="assets/dash/header.css">
+    <link rel="stylesheet" href="../assets/dash/header.css">
     <script src="https://kit.fontawesome.com/7d286ea9a7.js" crossorigin="anonymous"></script>
     
 </head>
