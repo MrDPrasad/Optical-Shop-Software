@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="assets/dash/nav.css"/>
     <script src="https://kit.fontawesome.com/e3674a2474.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <script>
-        function closeOverlay() {
-            document.getElementById("divOne").style.display = "none";
-        }
-    </script>
 </head>
 <body>
 
@@ -22,11 +17,11 @@
             <ul>
                 <li>
                     <a href="#" class="logo">
-                        <img src="assets//logo.jpg" alt="">
+                        <img src="assets/logo.jpg" alt="">
                         <span class="nav-item">Dashboard</span>
                     </a>
                 </li>
-                <li><a href="../homepage.php"><i class="fas fa-home"></i><span class="nav-item">Home</span></a></li>
+                <li><a href="homepage.php"><i class="fas fa-home"></i><span class="nav-item">Home</span></a></li>
                 <li><a href="main/cat.php"><i class="fas fa-user"></i><span class="nav-item">Category</span></a></li>
                 <li><a href="main/items.php"><i class="fas fa-user"></i><span class="nav-item">Items</span></a></li>
                 <li><a href="main/customer.php"><i class="fas fa-wallet"></i><span class="nav-item">Customer</span></a></li>

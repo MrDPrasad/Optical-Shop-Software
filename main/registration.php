@@ -168,7 +168,7 @@
                                  <button type="submit" name="register_btn" class="btn btn-primary">Create Account</button>
 
                                  <div class="text-left mt-6">
-                                <a href="loginpage.php"> Have an account? Register here</a>
+                                <a href="main/loginpage.php"> Have an account? Register here</a>
                                    </div>
                                  
                                  

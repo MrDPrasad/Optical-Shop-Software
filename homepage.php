@@ -20,6 +20,9 @@ include('../Optical-Shop-Software/assets/dash/header.php');
 </head>
 <body>
 
+<style>
+    
+</style>
     <div class="lens">
 
         <img src="assets/computerglass.jpg" alt="">
