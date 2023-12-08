@@ -11,4 +11,4 @@ if (!$con) {
     die("Someting went wrong !". mysqli_connect_error());
 }
 
-?>
+?>  

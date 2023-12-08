@@ -10,5 +10,6 @@ if (isset($_SESSION['auth']))
 }
 
 header('Location: homepage.php');
+header('Location: dashboard.php');
 
 ?>

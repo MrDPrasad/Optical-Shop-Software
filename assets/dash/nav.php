@@ -29,7 +29,7 @@
                 <li><a href="main/order.php"><i class="fas fa-tasks"></i><span class="nav-item">Order</span></a></li>
                 <li><a href="main/invoice.php"><i class="fas fa-cog"></i><span class="nav-item">Invoice</span></a></li>
                 <li><a href="main/report.php"><i class="fas fa-question-circle"></i><span class="nav-item">Reports</span></a></li>
-                <li><a href="main/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i><span class="nav-item">Web</span></a></li>
+                <li><a href="/main/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i><span class="nav-item">Web</span></a></li>
             </ul>
         </nav>
         </body>
