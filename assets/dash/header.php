@@ -17,7 +17,7 @@
         <li class="log">
             <i class="fa-solid fa-user"></i>
             <span style="margin-left: 5px;"><?=$_SESSION['auth_user']['FirstName']; ?></span>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="main/logout.php">Logout</a></li>
         </li>
     </li>
 <?php else: ?>
