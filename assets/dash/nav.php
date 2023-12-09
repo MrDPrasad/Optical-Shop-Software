@@ -31,6 +31,12 @@
                 <li><a href="main/report.php"><i class="fas fa-question-circle"></i><span class="nav-item">Reports</span></a></li>
                 <li><a href="main/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i><span class="nav-item">Web</span></a></li>
             </ul>
+            
         </nav>
-        </body>
+
+         
+
+    </div>
+        
+</body>
 </html>
