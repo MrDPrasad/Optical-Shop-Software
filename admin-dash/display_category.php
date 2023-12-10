@@ -1,13 +1,3 @@
- 
-
- <?php
-if (isset($_POST['displayCategory'])) {
-    // Code to redirect to the 'display_category.php' page
-    header("Location: display_category.php");
-    exit();
-}
-?>
-
 <span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
   <html lang="en">
   <head>
@@ -108,34 +98,82 @@ if (isset($_POST['displayCategory'])) {
         </div>
   
         <section class="main-course">
-          <h1>Category</h1>
-          
+          <h1>Items</h1>
           <div class="course-box">
-             <label for="">Name</label>
-             <input type="text" placeholder="Enter Category Name">
-              
-             <label for="">Description</label>
-             <input type="text" id="description" placeholder="Enter Description">
 
-             <label for="">Upload Image</label>
-             <input type="file" name="image">
-
-              
-
-             <button id="submitButton">Add Category</button>
-
-             <button id="submitButton" onclick="window.location.href='display_category.php'">Display Category</button>
-
-
-            </div>
+            
 
    
 
-        </section>
+          
 
+       
+
+          <table class="item-table">
+
+           
+
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Date Created</th>
+      <th>Brand</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2023-12-01</td>
+      <td>Item A</td> 
+      <td>glass</td>
+      <td>500</td>
+      <td>Description of Item A</td>
+      <td><button class="status-btn active">Active</button></td>
+      <td>
+         
+        <button class="action-btn">Edit</button>
+        <button class="action-btn">Remove</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2023-12-02</td>
+      <td>Item B</td>
+      <td>glass</td>
+      <td>500</td>
+      <td>Description of Item B</td>
+      <td><button class="status-btn inactive">Inactive</button></td>
+      <td>
+         
+        <button class="action-btn">Edit</button>
+        <button class="action-btn">Remove</button>
+      </td>
+    </tr>
+     
+  </tbody>
+</table>
+
+  
+
+
+             
+             
+          </div>
+        </section>
       </section>
     </div>
 
-    
+    </section>
+
+
+ 
+
+
+
   </body>
   </html></span>

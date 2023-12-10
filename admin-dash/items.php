@@ -101,7 +101,29 @@
           <h1>Items</h1>
           <div class="course-box">
 
-          <button id="submitButton12">+ Add Item</button>
+             <label for="">Item Name</label>
+             <input type="text" placeholder="Enter Category Name">
+              
+             <label for="">Description</label>
+             <input type="text" id="description" placeholder="Enter Description">
+
+             <label for="">Upload Image</label>
+             <input type="file" name="image">
+
+              
+
+             <button id="submitButton">Add Item</button>
+
+             <button id="submitButton" onclick="window.location.href='display_category.php'">Display Items</button>
+
+
+            </div>
+
+   
+
+        </section>
+
+        <!--  <button id="submitButton12">+ Add Item</button>
 
           <table class="item-table">
 
@@ -148,18 +170,18 @@
         <button class="action-btn">Remove</button>
       </td>
     </tr>
-    <!-- Add more rows as needed -->
+     
   </tbody>
 </table>
 
-<!--<div class="pagination">
+ <div class="pagination">
       <a href="#">&laquo; Previous</a>
       
        
        
       <a href="#">Next &raquo;</a>
     </div>
--->
+ 
 
 
              
@@ -171,7 +193,7 @@
 
 
 
-    <!-- The modal -->
+     The modal  
 <div class="modal" id="addItemModal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -199,7 +221,7 @@
       <button type="button" onclick="closeModal()">Cancel</button>
     </form>
   </div>
-</div>
+</div>-->
 
 <script>
   const modal = document.getElementById('addItemModal');

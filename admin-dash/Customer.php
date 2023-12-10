@@ -101,6 +101,9 @@
           <h1>Items</h1>
           <div class="course-box">
 
+          <button id="submitButton12">+ Add Customer</button>
+
+
           <table class="item-table">
   <thead>
     <tr>
@@ -156,6 +159,63 @@
       <a href="#">Next &raquo;</a>
     </div>
 -->
+
+
+
+  
+<div class="modal" id="addItemModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Add Item</h2>
+    <form>
+      <label for="brandName">CustomerID</label>
+      <input type="text" id="brandName" name="brandName"><br>
+
+      <label for="category">FirstName</label>
+      <input type="text" id="category" name="category"><br>
+
+      <label for="description">LastName</label>
+      <input type="text" id="description" name="description"><br>
+
+      <label for="price">ContactEmail</label>
+      <input type="text" name="ContactEmail"><br>
+
+      <label for="price">ContactPhone</label>
+      <input type="text" id="price" name="price"><br>
+
+      <label for="status">Status:</label>
+<select id="status" name="status">
+    <option value="active">Active</option>
+    <option value="inactive">Inactive</option>
+</select><br>
+
+      
+
+      <button type="button" onclick="saveItem()">Save</button>
+      <button type="button" onclick="closeModal()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('addItemModal');
+const addButton = document.getElementById('submitButton12');
+
+addButton.onclick = function() {
+  modal.style.display = 'block';
+  document.body.classList.add('modal-open');   
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.classList.remove('modal-open');  
+}
+
+function saveItem() {
+  closeModal();
+}
+  </script>
+
 
 
              
